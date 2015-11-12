@@ -13,11 +13,13 @@
     "test": "NODE_ENV=test mocha",
     "test:coverage": "istanbul --include-all-sources cover _mocha",
     "test:coverage:check": "istanbul --include-all-sources cover _mocha && istanbul check-coverage --statement 100 --branch 100 --function 100",
-    "lint": "standard"
+    "lint": "standard",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.0.0",
+    "coveralls": "^2.11.4",
     "istanbul": "^0.4.0",
     "mocha": "^2.2.5",
     "pre-commit": "^1.0.10",
