@@ -1,0 +1,30 @@
+{
+  "name": "freeport-promise",
+  "description": "A promise to find a free port.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/achingbrain/freeport-promise",
+  "author": "Alex Potsides",
+  "main": "lib/freeport",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/achingbrain/freeport-promise"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha",
+    "test:coverage": "istanbul --include-all-sources cover _mocha",
+    "test:coverage:check": "istanbul --include-all-sources cover _mocha && istanbul check-coverage --statement 100 --branch 100 --function 100",
+    "lint": "standard"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.2.5",
+    "pre-commit": "^1.0.10",
+    "standard": "^5.3.1"
+  },
+  "pre-commit": [
+    "lint",
+    "test:coverage:check"
+  ]
+}
