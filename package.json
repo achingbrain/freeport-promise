@@ -18,6 +18,7 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "bluebird": "^3.4.6",
     "chai": "^3.0.0",
     "coveralls": "^2.11.4",
     "istanbul": "^0.4.0",
