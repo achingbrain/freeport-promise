@@ -5,7 +5,20 @@ Like [freeport](https://libraries.io/npm/freeport) but with promises.
 
 ```javascript
 freeport()
-.then((port) => {
+.then(port => {
+  console.log(port)
+})
+```
+
+## Using other promise libraries
+
+By default we use the language-level `Promise` class, but if you want to use a different implementation, just pass it in as an argument:
+
+```javascript
+const bluebird = require('bluebird')
+
+freeport(bluebird)
+.then(port => {
   console.log(port)
 })
 ```
