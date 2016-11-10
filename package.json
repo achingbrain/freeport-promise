@@ -10,7 +10,7 @@
     "url": "https://github.com/achingbrain/freeport-promise"
   },
   "scripts": {
-    "test": "NODE_ENV=test; mocha",
+    "test": "NODE_ENV=test mocha",
     "test:coverage": "istanbul --include-all-sources cover _mocha",
     "test:coverage:check": "istanbul --include-all-sources cover _mocha && istanbul check-coverage --statement 100 --branch 100 --function 100",
     "lint": "standard",
