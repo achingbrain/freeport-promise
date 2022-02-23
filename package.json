@@ -1,6 +1,6 @@
 {
   "name": "freeport-promise",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A promise to find a free port.",
   "author": "Alex Potsides",
   "license": "Apache-2.0 OR MIT",
