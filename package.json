@@ -4,30 +4,31 @@
   "version": "1.0.0",
   "homepage": "https://github.com/achingbrain/freeport-promise",
   "author": "Alex Potsides",
-  "main": "lib/freeport",
+  "exports": {
+    ".": {
+      "import": "./dist/src/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/achingbrain/freeport-promise"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha",
-    "test:coverage": "istanbul --include-all-sources cover _mocha",
-    "test:coverage:check": "istanbul --include-all-sources cover _mocha && istanbul check-coverage --statement 100 --branch 100 --function 100",
-    "lint": "standard",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "lint": "aegir lint",
+    "dep-check": "aegir dep-check dist/src/**/*.js dist/test/**/*.js",
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "aegir test -f ./dist/test/*.js -f ./dist/test/**/*.js",
+    "test:chrome": "npm run test -- -t browser --cov",
+    "test:chrome-webworker": "npm run test -- -t webworker",
+    "test:firefox": "npm run test -- -t browser -- --browser firefox",
+    "test:firefox-webworker": "npm run test -- -t webworker -- --browser firefox",
+    "test:node": "npm run test -- -t node --cov",
+    "test:electron-main": "npm run test -- -t electron-main",
+    "release": "semantic-release"
   },
   "license": "ISC",
   "devDependencies": {
-    "bluebird": "^3.4.6",
-    "chai": "^3.0.0",
-    "coveralls": "^2.11.4",
-    "istanbul": "^0.4.0",
-    "mocha": "^2.2.5",
-    "pre-commit": "^1.0.10",
-    "standard": "^5.3.1"
-  },
-  "pre-commit": [
-    "lint",
-    "test:coverage:check"
-  ]
+    "aegir": "^36.1.3"
+  }
 }
