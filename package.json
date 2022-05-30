@@ -127,6 +127,6 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "aegir": "^36.1.3"
+    "aegir": "^37.0.17"
   }
 }
